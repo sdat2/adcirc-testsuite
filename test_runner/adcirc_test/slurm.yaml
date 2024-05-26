@@ -1,0 +1,10 @@
+account: n02-bas
+qos: short
+partition: standard
+node: 1
+time: "0:20:00"
+tasks-per-node: 128
+cpus-per-task: 1
+mail-user: sdat2@cam.ac.uk
+modules: "PrgEnv-gnu/8.3.3 cray-hdf5-parallel/1.12.2.1 cray-netcdf-hdf5parallel/4.9.0.1"
+srun_flags:  "--distribution=block:block --hint=nomultithread"

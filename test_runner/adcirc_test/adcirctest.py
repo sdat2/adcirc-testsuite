@@ -245,6 +245,8 @@ class AdcircTest:
         import os
         import subprocess
         from tqdm import tqdm
+        # new addition
+        # from slurmpy import Slurm
 
         # Current directory
         cwd = os.getcwd()
@@ -490,11 +492,13 @@ class AdcircTest:
             control_file,
             drop_variables=AdcircTest.ADCIRC_DROP_VARIABLES_LIST,
             decode_times=False,
+            engine="netcdf4",
         )
         test = xr.open_dataset(
             test_file,
             drop_variables=AdcircTest.ADCIRC_DROP_VARIABLES_LIST,
             decode_times=False,
+            engine="netcdf4",
         )
 
         passed_test = AdcircTest.__compare_datasets(control, test, tolerance)
